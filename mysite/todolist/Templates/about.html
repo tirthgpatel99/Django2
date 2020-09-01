@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>About Page - Mysite</title>
+{% endblock title%}
+
+
+{%block content %}
+<div class="container">
+
+    <h1>{{welcome_about}}</h1>
+
+    <section class="sec-100px about">
+      <div class="container">
+        <div class="row">
+
+          <!-- INTRO -->
+          <div class="col-md-12">
+            <h2 class="text-danger">Ancient Antiquity</h2>
+            <hr>
+           <h3> <p class="text-warning" >
+			A museum  is an institution that cares for  a collection of artifacts and other objects of artistic, cultural, historical, or scientific importance. Many public museums make these items available for public viewing through exhibits that may be permanent or temporary. The largest museums are located in major cities throughout the world, while thousands of local museums exist in smaller cities, towns and rural areas. Museums have varying aims, ranging from serving researchers and specialists to serving the general public. The goal of serving researchers is increasingly shifting to serving the general public.
+			</p></h3>
+           <!-- <a href="#.">Buy Tickets <i class="fa fa-angle-right"></i></a>--> </div>
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <div class="tittle">
+         <h4 class="text-primary">Meet Our Team</h4>
+          <hr>
+          <h6 class="text-secondary">OUR MEMBER</h6>
+        </div>
+
+    <section class="">
+
+        <div class="row">
+
+            <!-- IMAGE -->
+            <div class="col-md-4 no-padding">
+                <div > <img class="img-responsive" src="{% static 'images/Ruchik.jpg' %}" alt="Ruchik" style="height:400px;width:400px";>
+                    <h4><b><center><p class="text-danger">Ruchik Shah</p></center></b></h4>
+                </div>
+            </div>
+
+            <div class="col-md-4 no-padding">
+                <div > <img class="img-responsive" src="{% static 'images/Tarang.jpg' %}" alt="Tarang" style="height:400px;width:400px";>
+                    <h4><b><center><p class="text-danger">Tarang Shah</p></center></b></h4>
+                </div>
+            </div>
+
+            <div class="col-md-4 no-padding">
+                <div > <img class="img-responsive" src="{% static 'images/Navneet.jpg' %}" alt="Navneet" style="height:400px;width:400px";>
+                    <h4><b><center><p class="text-danger">Saunee Navneet</p></center></b></h4>
+                </div>
+            </div>
+
+            <!-- History Content -->
+            <div class="col-md-8 no-padding">
+                <div class="history-detail">
+                    <ul class="row">
+
+
+                    </ul>
+
+                    <!-- On View -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+{%endblock content%}
+
+<!--<title>Task Page - mysite</title>-->
+<!--  <body>-->
+
+<!--  <div class=container">-->
+
+<!--    <h1>{{Welcome}}</h1>-->
+
+<!--  </div>-->
+

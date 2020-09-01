@@ -1,0 +1,264 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+    <!--Title image
+   -->
+    <link rel="icon" href="{% static 'images/pac-man.ico' %}" type="img/gif" sizes="16x16">
+    <!--    <link rel = "icon" href =-->
+    <!--            "https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png"-->
+    <!--          type = "image/x-icon">-->
+
+    <!--
+    Datatables
+    -->
+    <!--<link rel="stylesheet" href="{% static 'css.css1.css'%}">-->
+    <!--    <link rel="stylesheet" href="{% static 'css.css2.css'%}">-->
+    <!--    <link rel="stylesheet" href="{% static 'css.css3.css'%}">-->
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
+
+
+    <!--    &lt;!&ndash;    BootStrap4&ndash;&gt;-->
+    <!--         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">-->
+    <!--         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">-->
+    <!--         <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.bootstrap4.min.css">-->
+
+
+    {% block title %}
+    {% endblock title %}
+
+    <style>
+        body{
+        background-image:url('{% static 'images/bg.jpg'%}' ) ;
+        background-repeat:no-repeat;
+        background-size:cover;
+        }
+
+
+    </style>
+
+</head>
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >-->
+<nav class="navbar navbar-expand-lg navbar-light bg-warning ">
+    <!--<nav class="navbar navbar-light bg-warning" >-->
+    <a class="navbar-brand" href="#"><img src="{% static 'images/logo3x`.png'%}" alt="MySite" height="45px"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto col-lg-11">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'todolist:task' %}">Todolist <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav mr-auto col-lg-1">
+            <li class="nav-item dropdown" >
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    My Account
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left" aria-labelledby="navbarDropdown" data-toggle="true">
+                    <a class="nav-link" href="{% url 'user_app:login' %}">Login</a>
+                    <a class="nav-link" href="{% url 'user_app:logout' %}">Logout</a>
+                    <div class="dropdown-divider" align="left"></div>
+                    <a class="dropdown-item" href="{% url 'user_app:register' %}"><b>Create Account?</b></a>
+                </div>
+            </li>
+
+            <!--            <li class="nav-item dropdown" >-->
+            <!--                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"-->
+            <!--                   aria-haspopup="true" aria-expanded="false">-->
+            <!--                    My Account-->
+            <!--                </a>-->
+            <!--                <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+            <!--                    <a class="nav-link" href="{% url 'user_app:login' %}">Login</a>-->
+            <!--                    <a class="nav-link" href="{% url 'user_app:logout' %}">Logout</a>-->
+            <!--                    <div class="dropdown-divider"></div>-->
+            <!--                    <a class="dropdown-item" href="{% url 'user_app:register' %}"><b>Create Account?</b></a>-->
+            <!--                </div>-->
+            <!--            </li>-->
+            <!--
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-0">
+                                    <li class="nav-item dropdown" >
+
+                                    </li>
+                                </div>
+                            </div>
+                        </div>-->
+
+
+            <!--            <li class="nav-item dropdown">-->
+            <!--                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"-->
+            <!--                   aria-haspopup="true" aria-expanded="false">-->
+            <!--                    Dropdown-->
+            <!--                </a>-->
+            <!--                <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+            <!--                    <a class="dropdown-item" href="#">Action</a>-->
+            <!--                    <a class="dropdown-item" href="#">Another action</a>-->
+            <!--                    <div class="dropdown-divider"></div>-->
+            <!--                    <a class="dropdown-item" href="#">Something else here</a>-->
+            <!--                </div>-->
+            <!--            </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>-->
+        </ul>
+        <!--    <form class="form-inline my-12 my-lg-0">
+
+        </form>-->
+        <!--        <form class="form-inline my-2 my-lg-0">-->
+        <!--            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+        <!--            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+        <!--        </form>-->
+    </div>
+</nav>
+
+<body>
+
+{%block content %}
+{%endblock content%}
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+<!--
+Datatables
+-->
+
+
+<!--<script src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
+<!--<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>-->
+<!--<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>-->
+<!--<script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>-->
+<!--<script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>-->
+<!--<script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>-->
+<!--<script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>-->
+<!--<script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.colVis.min.js"></script>-->
+
+<script src="{% static 'javascript/js1.js'%}"></script>
+<script src="{% static 'javascript/js2.js'%}"></script>
+<script src="{% static 'javascript/js3.js'%}"></script>
+<script src="{% static 'javascript/js4.js'%}"></script>
+<script src="{% static 'javascript/js5.js'%}"></script>
+<script src="{% static 'javascript/js6.js'%}"></script>
+<script src="{% static 'javascript/js7.js'%}"></script>
+<script src="{% static 'javascript/js8.js'%}"></script>
+<script src="{% static 'javascript/js9.js'%}"></script>
+<script src="{% static 'javascript/js10.js'%}"></script>
+<script src="{% static 'javascript/js11.js'%}"></script>
+
+
+<!--&lt;!&ndash;printall&ndash;&gt;-->
+<!--<script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>-->
+<!--&lt;!&ndash;showall&ndash;&gt;-->
+<!--<script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>-->
+
+<script src="{% static 'javascript/js12.js'%}"></script>
+<script src="{% static 'javascript/js13.js'%}"></script>
+<script type="text/javascript">
+
+		$(document).ready(function() {
+
+    $('#example').DataTable( {
+
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copyHtml5',
+                exportOptions: {
+                    columns: [ 0, ':visible' ]
+                }
+            },
+            {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+             {
+                extend: 'csvHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+
+            {
+                extend: 'print',
+                text: 'Print all ',
+                exportOptions: {
+                    modifier: {
+                        selected: null
+                    }
+                }
+            },
+            {
+             text: 'TSV',
+                extend: 'csvHtml5',
+                fieldSeparator: '\t',
+                extension: '.tsv'
+
+            },
+
+
+            {
+                text: 'JSON',
+                action: function ( e, dt, button, config ) {
+                    var data = dt.buttons.exportData();
+
+                    $.fn.dataTable.fileSave(
+                        new Blob( [ JSON.stringify( data ) ] ),
+                        'Export.json'
+                    );
+                }
+            },
+
+            'colvis',
+
+        ],
+    } );
+} );
+
+</script>
+</body>
+</html>

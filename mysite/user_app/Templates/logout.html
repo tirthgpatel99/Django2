@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+<title>Logout</title>
+{% endblock title %}
+
+{% block content %}
+
+
+
+<h1><p class="text-primary ">Login Form</p></h1>
+<div class="container p-2">
+    <h3>Logged Out</h3>
+    <p>Thanks for spending some quality time with the Web site today.</p>
+    <br>
+    <a href="{% url 'user_app:login' %}">
+        <button type="submit" class="btn btn-primary col-lg-2">Login </button>
+    </a>
+
+</div>
+{% endblock content %}
